@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Prediction</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 50px; }
+        .form-container { max-width: 500px; margin: auto; }
+        .form-group { margin-bottom: 15px; }
+        label { display: inline-block; width: 200px; }
+        input { padding: 5px; width: 200px; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h1>Weather Prediction</h1>
+    <div class="form-container">
+        <form method="POST">
+            <div class="form-group">
+                <label for="Temp_C">Temperature (°C):</label>
+                <input type="number" step="any" name="Temp_C" required>
+            </div>
+            <div class="form-group">
+                <label for="Dew Point Temp_C">Dew Point Temperature (°C):</label>
+                <input type="number" step="any" name="Dew Point Temp_C" required>
+            </div>
+            <div class="form-group">
+                <label for="Rel Hum_%">Relative Humidity (%):</label>
+                <input type="number" step="any" name="Rel Hum_%" required>
+            </div>
+            <div class="form-group">
+                <label for="Wind Speed_km/h">Wind Speed (km/h):</label>
+                <input type="number" step="any" name="Wind Speed_km/h" required>
+            </div>
+            <div class="form-group">
+                <label for="Visibility_km">Visibility (km):</label>
+                <input type="number" step="any" name="Visibility_km" required>
+            </div>
+            <div class="form-group">
+                <label for="Press_kPa">Pressure (kPa):</label>
+                <input type="number" step="any" name="Press_kPa" required>
+            </div>
+            <div class="form-group">
+                <label for="Hour">Hour (0-23):</label>
+                <input type="number" step="1" min="0" max="23" name="Hour" required>
+            </div>
+            <button type="submit">Predict Weather</button>
+        </form>
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

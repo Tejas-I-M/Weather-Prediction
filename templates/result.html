@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Prediction Result</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 50px; }
+        .result-container { max-width: 500px; margin: auto; }
+        .back-link { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Weather Prediction Result</h1>
+    <div class="result-container">
+        <p><strong>Predicted Weather:</strong> {{ prediction }}</p>
+        <p><strong>Confidence:</strong> {{ confidence }}%</p>
+        <h3>Probabilities:</h3>
+        <ul>
+            {% for class_name, prob in probabilities.items() %}
+                <li>{{ class_name }}: {{ prob }}%</li>
+            {% endfor %}
+        </ul>
+        <a href="/" class="back-link">Back to Input</a>
+    </div>
+</body>
+</html>
